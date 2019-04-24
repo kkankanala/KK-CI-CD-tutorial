@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:ee="http://www.mulesoft.org/schema/mule/ee/core" xmlns:http="http://www.mulesoft.org/schema/mule/http"
+	xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd
+http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/ee/core/current/mule-ee.xsd">
+	<http:listener-config name="HTTP_Listener_config" doc:name="HTTP Listener config" doc:id="04497d90-6877-40a8-9a39-88fa2c510b34" >
+		<http:listener-connection host="0.0.0.0" port="8081" />
+	</http:listener-config>
+	<flow name="poc-hello-worldFlow" doc:id="03cf6c3e-a5e5-4b8e-a521-752d48d444f7" >
+		<http:listener doc:name="Listener" doc:id="00527efb-6b43-4b4a-abfd-0bfadd34fb20" config-ref="HTTP_Listener_config" path="/api/sample-request-1"/>
+		<logger level="INFO" doc:name="Logger" doc:id="401a5219-0b40-4393-8787-16e379af616c" message="===========Input logged ======#[payload]============"/>
+		<ee:transform doc:name="Transform Message" doc:id="4cc6d0dd-a4cf-4ff1-ab31-1cdf3493816e" >
+			<ee:message >
+				<ee:set-payload ><![CDATA[%dw 2.0
+output application/json
+---
+"response" : "Hello World successfully invoked at " ++ now()]]></ee:set-payload>
+			</ee:message>
+		</ee:transform>
+	</flow>
+</mule>
