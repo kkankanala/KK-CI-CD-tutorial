@@ -19,6 +19,6 @@ output application/json
 "response" : "Hello World successfully invoked at " ++ now()]]></ee:set-payload>
 			</ee:message>
 		</ee:transform>
-		<logger level="INFO" doc:name="Logger" doc:id="d7302b16-df41-4b44-9354-8c7f64222457" message="===service is successful=============="/>
+		<logger level="INFO" doc:name="Logger" doc:id="d7302b16-df41-4b44-9354-8c7f64222457" message="===service is successful============="/>
 	</flow>
 </mule>
