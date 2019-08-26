@@ -23,7 +23,7 @@
 			<plugin>
 				<groupId>org.mule.tools.maven</groupId>
 				<artifactId>mule-maven-plugin</artifactId>
-				<version>${mule.maven.plugin.version}</version>
+				<version>2.0</version>
 				<extensions>true</extensions>
 				<configuration>
           <deploymentType>cloudhub</deploymentType>
@@ -33,13 +33,11 @@
           <applicationName>HelloWorldKK</applicationName>
           <environment>Sandbox</environment> 
           <businessGroup>/KKTraining/DEVOps</businessGroup>
-         <!--<region>${cloudhub.region}</region>
-         <workers>${cloudhub.workers}</workers>-->
           <uri>https://anypoint.mulesoft.com</uri> 
           <workerType>Micro</workerType>
         </configuration>
 			</plugin>
-		<plugin>
+		<plugin> 
                 <groupId>com.mulesoft.munit.tools</groupId>
                 <artifactId>munit-maven-plugin</artifactId>
                 <version>${munit.version}</version>
