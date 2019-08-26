@@ -14,7 +14,7 @@
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
 		<app.runtime>4.1.5</app.runtime>
-		<mule.maven.plugin.version>3.1.6</mule.maven.plugin.version>
+		<mule.maven.plugin.version>3.2.7</mule.maven.plugin.version>
 	<munit.version>2.1.4</munit.version>
     </properties>
 
@@ -27,16 +27,16 @@
 				<extensions>true</extensions>
 				<configuration>
           <deploymentType>cloudhub</deploymentType>
-          <muleVersion>${mule.version}</muleVersion> 
-          <username>${anypoint.username}</username> 
+          <muleVersion>4.2.0</muleVersion> 
+          <username>kktraining2019</username> 
           <password>${anypoint.password}</password> 
-          <applicationName>${artifactId}</applicationName>
-          <environment>${cloundhub.env}</environment> 
-          <businessGroup>${anypoint.businessGroup}</businessGroup>
-          <region>${cloudhub.region}</region>
-          <uri>${anypoint.uri}</uri> 
-          <workerType>${cloudhub.workerType}</workerType>
-          <workers>${cloudhub.workers}</workers>
+          <applicationName>HelloWorldKK</applicationName>
+          <environment>Sandbox</environment> 
+          <businessGroup>/KKTraining/DEVOps</businessGroup>
+         <!--<region>${cloudhub.region}</region>
+         <workers>${cloudhub.workers}</workers>-->
+          <uri>https://anypoint.mulesoft.com</uri> 
+          <workerType>Micro</workerType>
         </configuration>
 			</plugin>
 		<plugin>
